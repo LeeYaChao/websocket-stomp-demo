@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration>
+<configuration debug="true">
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5p [%thread] [%F:%L] : %logger{36} - %m%n
+            </pattern>
+        </encoder>
+    </appender>
+    <!--
+    org log日志关闭
+
+    jdbc.sqlonly           仅记录SQL。
+    jdbc.sqltiming         计时统计SQL的执行用时。
+    jdbc.audit             记录所有的JDBC调用（ResultSet的除外）。Log量非常大，会影响性能，建议关闭。 一般情况下不需要开这个设定，除非追踪一个特定的JDBC问题。
+    jdbc.resultset         比audit量更大，包括ResultSet对象，记录所有的JDBC记录。建议关闭
+    jdbc.connection        记录打开和关闭连接以及打开的连接数。用于追踪连接泄漏问题，非常有用。
+     -->
+    <logger name="org" level="ERROR" />
+    <logger name="org.hibernate.SQL" level="ERROR" />
+    <logger name="org.springframework" level="ERROR" />
+    <logger name="jdbc.sqlonly" level="ERROR" />
+    <logger name="jdbc.sqltiming" level="ERROR" />
+    <logger name="jdbc.audit" level="ERROR" />
+    <logger name="jdbc.resultset" level="ERROR" />
+    <logger name="jdbc.connection" level="ERROR" />
+    <logger name="com.taiji" level="ERROR" />
+
+    <logger name="druid.sql" level="ERROR" />
+    <logger name="druid.sql.Statement" level="ERROR" />
+    <logger name="druid.sql.DataSource" level="ERROR" />
+    <logger name="druid.sql.Connection" level="ERROR" />
+    <logger name="druid.sql.ResultSet" level="ERROR" />
+
+    <!-- 发布不能用DEBUG 要用ERROR -->
+    <root level="ERROR">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+</configuration>

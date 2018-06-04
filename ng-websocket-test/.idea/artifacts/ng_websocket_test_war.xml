@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ng-websocket-test:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="ng-websocket-test.war">
+      <element id="artifact" artifact-name="ng-websocket-test:war exploded" />
+    </root>
+  </artifact>
+</component>
